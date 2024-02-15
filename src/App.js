@@ -1,9 +1,11 @@
-import Accordion from "./Accordion/Accordion";
+// import Accordion from "./Accordion/Accordion";
+import Hex from "./HEX/Hex";
 
 function App() {
   return (
     <>
-      <Accordion />
+      {/* <Accordion /> */}
+      <Hex />
     </>
   );
 }
