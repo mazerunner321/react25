@@ -1,0 +1,41 @@
+.img-slider-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    transition: translate 700ms ease-in-out;
+}
+
+.img-slider-btn {
+    all: unset;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 300ms ease-in-out;
+}
+
+.img-slider-btn:hover,
+.img-slider-btn:focus-visible {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.img-slider-dot-btn {
+    transition: scale 200ms ease-in-out;
+}
+
+.img-slider-dot-btn * {
+    cursor: pointer;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: white;
+}
+
+.img-slider-dot-btn:hover,
+.img-slider-dot-btn:focus-visible {
+    scale: 1.2;
+}
