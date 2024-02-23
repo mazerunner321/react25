@@ -4,18 +4,23 @@ const LoadMore = () => {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
+  const [disabled, setDisabled] = useState(false);
 
   const getProducts = async () => {
     try {
       setLoading(true);
       const res = await fetch(
-        `https://dummyjson.com/products?limit=10&skip=${
-          count === 0 ? 0 : count * 10
+        `https://dummyjson.com/products?limit=50&skip=${
+          count === 0 ? 0 : count * 50
         }`
       );
       const data = await res.json();
-      console.log(data);
-      setProducts(data.products);
+      if (data && data.products) {
+        setProducts((prev) => [...prev, ...data.products]);
+      }
+      if (data.skip === data.total) setDisabled(true);
+      console.log("total ======>", data.total);
+      console.log("skip ======>", data.skip);
       setLoading(false);
     } catch (error) {
       console.warn(error.message);
@@ -25,7 +30,7 @@ const LoadMore = () => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [count]);
 
   if (loading)
     return (
@@ -80,8 +85,12 @@ const LoadMore = () => {
 
       {/* Load more Button */}
       <div className="flex justify-center mt-5">
-        <button className="bg-teal-400 py-2 px-6 rounded-lg hover:bg-teal-300 text-sm font-bold font-mono">
-          Load More Products
+        <button
+          onClick={() => setCount((prev) => prev + 1)}
+          className="bg-teal-400 py-2 px-6 rounded-lg hover:bg-teal-300 text-sm font-bold font-mono"
+          disabled={disabled}
+        >
+          {disabled ? "You have reached the End" : "Load More Products"}
         </button>
       </div>
     </main>
