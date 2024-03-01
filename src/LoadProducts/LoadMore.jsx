@@ -19,8 +19,6 @@ const LoadMore = () => {
         setProducts((prev) => [...prev, ...data.products]);
       }
       if (data.skip === data.total) setDisabled(true);
-      console.log("total ======>", data.total);
-      console.log("skip ======>", data.skip);
       setLoading(false);
     } catch (error) {
       console.warn(error.message);

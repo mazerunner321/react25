@@ -12,7 +12,7 @@ function App() {
       {/* <Hex /> */}
       {/* <Star /> */}
       {/* <ImgSlider /> */}
-      <LoadMore />
+      {/* <LoadMore /> */}
     </>
   );
 }
