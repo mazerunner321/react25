@@ -3,7 +3,7 @@ import MenuItem from "./MenuItem";
 
 const MenuList = ({ list = [] }) => {
   return (
-    <ul>
+    <ul className="ml-4">
       {list?.map((list, i) => (
         <MenuItem key={i} item={list} />
       ))}
