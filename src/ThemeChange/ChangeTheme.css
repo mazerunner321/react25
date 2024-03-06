@@ -1,0 +1,34 @@
+:root {
+    --background: white;
+    --text_color: black;
+    --btn_bg: black;
+    --btn_text: white;
+}
+
+[data-theme='dark'] {
+    --background: black;
+    --text_color: white;
+    --btn_bg: white;
+    --btn_text: black;
+}
+
+.light-dark-mode {
+    background-color: var(--background);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 10rem;
+    transition: all 500ms;
+}
+
+.light-dark-mode .container h1 {
+    color: var(--text_color);
+    font-size: 40px;
+}
+
+.light-dark-mode .container button {
+    background-color: var(--btn_bg);
+    color: var(--btn_text);
+}
