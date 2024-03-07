@@ -3,8 +3,9 @@
 // import ImgSlider from "./Slider/ImgSlider";
 // import Star from "./StarRating/Star";
 // import LoadMore from "./LoadProducts/LoadMore";
-import ChangeTheme from "./ThemeChange/ChangeTheme";
-import TreeView from "./TreeView/TreeView";
+import ScrollIndicator from "./Scrollindicator/ScrollIndicator";
+// import ChangeTheme from "./ThemeChange/ChangeTheme";
+// import TreeView from "./TreeView/TreeView";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       {/* <LoadMore /> */}
       {/* <TreeView /> */}
       {/* <ChangeTheme /> */}
+      <ScrollIndicator />
     </>
   );
 }
